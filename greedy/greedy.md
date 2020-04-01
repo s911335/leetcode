@@ -160,3 +160,23 @@ Solution:
 5. If element in the intervals can be inserted, let element[i] = 1 and
    n minus one.
 6. Finally, if n <= 0, return true. if not, return false.
+
+## 392. Is Subsequence
+
+Given two string s and t, check if s is a subsequence of t.
+
+A subsequence of a string is a new string that is formed from the original
+string by seleting some (can be none) of characters without disturbing the
+relative positions of the remaining characters. (i.e., "ace" is a subsequence
+of "abcde" while "aec" is not)
+
+Ex1. Input: s = "abc", t = "ahbgdc", Output: true.
+Ex2. Input: s = "axc", t = "ahbgdc", Output: false.
+
+Solution:
+1. Set conditions, if s.size() == 0, return true. Due to no element in s array.
+2. Set s_pointer = 0 and t_pointer = 0. To do while loop with the conditions
+   t.size() > t_pointer and t_pointer++ in each loop.
+3. if s[s_pointer] == t[t_pointer], s_pointer++.
+4. if s_pointer == s.size(), return true.
+5. if while loop is end and not to return true, return false.
