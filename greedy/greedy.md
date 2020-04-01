@@ -222,3 +222,20 @@ Solution:
 4. If interval_max is larger than max, let max = intervals_max.
 5. After while loop, return max.
 
+## 763. Partition Labels.
+
+A string S of lowercase English letters is given. We want to partition this
+string into as many parts as possible so that each letter appears in at most
+one part, and return a list of integers representing the size of these parts.
+
+Ex1: Input: S = "ababcbacadefegdehijhklij" Output: [9, 7, 8]
+
+Solution:
+1. First, we need to know all number of the alphabet char to int. And do 
+   forloop to get last one index of alphabets in S string. Every lastone
+   index is inserted to vector<int> alphabet.
+2. To get partition, We need to know every element's lastone index. Do
+   while loop with the condition 'pointer < last'. if get the index is
+   lager than lastone index. Let lastone index = the index. And partition
+   plus one.
+3. To get interval in the partition. Following step 2.
