@@ -44,7 +44,7 @@ Solutions:
 5. if vector[0] > pointer is not true, let result plus one.
 6. Finally, return result.
 
-## 452. Minimum Number of Arrows to Burst Ballons:
+## 452. Minimum Number of Arrows to Burst Ballons
 
 There are some spherical balloons spread in two-dimensional space. For each
 balloon, provided input is the start and end coordinates of the horizontal
@@ -71,7 +71,7 @@ Solution:
 4. if points[i][0] > pointer, let pointer = point[i][1] and arrows plus one.
 5. Finally, return arrows.
 
-## 406. Queue Reconstruction by Height:
+## 406. Queue Reconstruction by Height
 
 You are given an array of people, people, which are the attributes of some
 people in a queue (not necessarily in order). Each people[i] = [hi, ki]
@@ -98,5 +98,65 @@ Solution:
    You will understand it when you follow by leetcode_406.cpp. 
 4. Move next last element in people and Repeat step 3. 
 
+## 121. Best Time to Buy and Sell Stock
 
+You are given an array prices where prices[i] is the price of a given stock
+on the ith day.
+You want to maximize your profit by choosing a single day to buy one stock and
+choosing a different day in the future to sell the stock.
+Return the maximum profit you can achieve from this transaction. If you cannot
+achieve any profit, return 0.
 
+Ex1: prices = [7, 1, 5, 3, 6, 4], Output = 5.
+Ex2: prices = [7, 6, 4, 3, 1], Output = 0.
+Ex3: prices = [2, 4, 1], Output = 2.
+
+Solution:
+1. Set max = 0, min = prices[0]
+2. To do forloop of size of prices.
+3. If min > prices[i], let min = prices[i].
+4. If (prices[i] - min) > max, let max = prices[i] - min.
+5. Return max.
+
+## 122. Best Time to Buy and Sell Stock II
+
+You are given an array prices where prices[i] is the price of a given stock
+on the ith day.
+Find the maximum profit you can achueve. You may complete as many transaction
+as you like. (i.e, buy one and sell one share of the stock multiple times).
+Note: You may not engage in multiple transactions simultaneously (i.e, you
+must sell the stock before you buy again).
+
+Ex1: prices = [7, 1, 5, 3, 6, 4]. Output = 7 = (5 - 1) + (6 - 3)
+Ex2: prices = [1, 2, 3, 4, 5]. Output = 4 = 5 - 1.
+Ex3: prices = [7, 6, 4, 3, 1]. Output = 0
+
+Solution:
+1. This problem is different from leetcode 121 due to lots of transactions.
+2. Therefore, Need to set pointer is last element and max = 0.
+3. To do foorloop of prices of size, if (i-1) element is smaller than i element,
+   we need to add difference between i element to i-1 element to max value..
+4. Finally, Return max.
+
+## 605. Can Place Flowers
+
+You can a long flowerbed in which some of plots are planted, and some are not.
+However, flowers cannot be planted in adjacent plots.
+Given an integer array flowerbed containing 0's and 1's, where 0 means empty
+and 1 means not empty, and an integer n, return if n new flowers can be
+planted in the flowerbed without violating the no-adjacent-flowers rule.
+
+Ex1: flowerbed = [1, 0, 0, 0, 1], n = 1, Output: True.
+Ex2: flowerbed = [1, 0, 0, 0, 1], n = 2, Output: False.
+
+Solution:
+1. To check flowerbed size is whether equal to one. If equal to one, make a
+   conditions.
+2. To check first element and last one element can be insert to a flower.
+3. If element in the intervals can be inserted, let element[i] = 1 and
+   n minus one.
+4. To forloop in intervals, to check element in the intervals and inserted
+   a flower to intervals.
+5. If element in the intervals can be inserted, let element[i] = 1 and
+   n minus one.
+6. Finally, if n <= 0, return true. if not, return false.
