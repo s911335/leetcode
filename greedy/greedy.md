@@ -180,3 +180,27 @@ Solution:
 3. if s[s_pointer] == t[t_pointer], s_pointer++.
 4. if s_pointer == s.size(), return true.
 5. if while loop is end and not to return true, return false.
+
+## 665. Non-decreasing Array
+
+Given an array nums with n integers, your task is to check if it could become
+non-decreasing by modifying ar most one element.
+
+We define an array is non-decreasing if nums[i + 1] >= nums[i] holds for every
+i (0-based) such that (n - 2 >= i >= 0).
+
+Ex1: Input: nums = [4, 2, 3], Output: true.
+Ex2: Input: nums = [4, 2, 1], Output: false.
+
+Solution:
+1. Set condition: if nums.size() is smaller than 3, return true.
+2. Set error_count = 0, pointer = 1.
+3. To do while loop with the condition pointer is smaller than nums.size()
+   and pointer plus on in each loop.
+4. If find that nums[i] and nums[i-1] is not non-decreasing. To check
+   nums[i-1] and nums[i+1].
+5. If nums[i-1] is larger than and equal to nums[i+1]. Let
+   nums[i-1] = nums[i+1]. else nums[i] = nums[i-1].
+6. And make error_count plus one, pointer set zero and reset while loop.
+7. If error_count is equal to 2. return false.
+8. If while loop is done, return true.
