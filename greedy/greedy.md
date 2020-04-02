@@ -204,3 +204,21 @@ Solution:
 6. And make error_count plus one, pointer set zero and reset while loop.
 7. If error_count is equal to 2. return false.
 8. If while loop is done, return true.
+
+## 53. Maximum Subarray
+
+Given an integer array nums, find the contiguous subarray (containing at least
+one number) which has the largest sum and return its sum.
+
+Ex1: Input: nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4], Output: 6.
+Ex2: Input: nums = [1], Output: 1.
+Ex3: Input: nums = [5, 4, -1, 7, 8], Output: 23.
+
+Solution:
+1. Set int max = nums[0], int interval_max =0, int pointer = 0.
+2. To do while loop with the condition, pointer is smaller than nums.size().
+3. let interval_max plus nums[i], if interval_max is smaller than nums[i],
+   let interval_max = nums[i] for each loop.
+4. If interval_max is larger than max, let max = intervals_max.
+5. After while loop, return max.
+
