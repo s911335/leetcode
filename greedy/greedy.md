@@ -11,10 +11,13 @@ If s[j] >= g[i], we can assign the cookie j to the child i, and the child i
 will be content. Your goal is to maximize the number of your content children
 and output the maximum number.
 
+### Ex:
+
 1. g = [1, 2, 3], s = [1, 1]  Output: 1
 2. g = [1, 2], s = [1, 2, 3]  Output: 2
 
-Solution:
+### Solution:
+
 1. Sort vector g and vector s.
 2. Set pointer of g and pointer of s to size() - 1.
 3. If s[pointer of s] >= g[pointer of g], make result count plus one and move
@@ -27,6 +30,8 @@ Solution:
 Given a collection of intervals, find the mininmum number of intervals you need
 to remove to make the rest of the intervals non-overlapping.
 
+### Ex:
+
 1. Input[[1, 2], [2, 3], [3, 4], [1, 3]]  Output: 1
 2. Input[[1, 2], [1, 2], [1, 2]]  Output: 2
 3. Input[[1, 2], [2, 3]] Output: 0
@@ -36,7 +41,7 @@ Note:
 2. Intervals like [1, 2] and [2, 3] have borders "touching" but they don't
    overlap each other.
 
-Solutions:
+### Solutions:
 1. Intervals shall be sorted by following last element of vector of vector.
 2. set result = 0 and pointer = intervals[0][0].
 3. To do forloop for intervals sizes.
@@ -58,13 +63,16 @@ that can be shot. An arrow once shot keeps traveling up infinitely.
 Given an array points where point[i] = [x_start, x_end], return the minimum
 number of arrows that must be shot to burst all ballons
 
-Ex1: Input: [[10, 16], [2, 8], [1, 6], [7, 12]], Output = 2
-Ex2: Input: [[1, 2], [3, 4], [5, 6], [7, 8]], Output = 4
-Ex3: Input: [[1, 2], [2, 3], [3, 4], [4, 5]], Output = 2
-Ex4: Input: [[1, 2]], Output = 1
-Ex5: Input: [[2, 3], [2, 3]], Output = 1
+### Ex:
 
-Solution:
+1. Input: [[10, 16], [2, 8], [1, 6], [7, 12]], Output = 2
+2. Input: [[1, 2], [3, 4], [5, 6], [7, 8]], Output = 4
+3. Input: [[1, 2], [2, 3], [3, 4], [4, 5]], Output = 2
+4. Input: [[1, 2]], Output = 1
+5. Input: [[2, 3], [2, 3]], Output = 1
+
+### Solution:
+
 1. points shall be sorted by following last element of vector of vector.
 2. set arrows = 0 and pointer = points[0][1]
 3. To do forloop for intervals sizes.
@@ -82,12 +90,15 @@ The returned queue should be formatted as an array queue, where
 queue[j] = [hj, kj] is the attributes of the j th person in the queue (
 queue[0] is the person at front of the queue).
 
-Ex1: people = [[7, 0], [4, 4], [7, 1], [5, 0], [6, 1], [5, 2]],
+### Ex:
+
+1. people = [[7, 0], [4, 4], [7, 1], [5, 0], [6, 1], [5, 2]],
      output = [[5, 0], [7, 0], [5, 2], [6, 1], [4, 4], [7, 1]].
-Ex2: people = [[6, 0], [5, 0], [4, 0], [3, 2], [1, 4], [6, 0]].
+2. people = [[6, 0], [5, 0], [4, 0], [3, 2], [1, 4], [6, 0]].
      output = [[4, 0], [5, 0], [2, 2], [3, 2], [1, 4], [6, 0]].
 
-Solution:
+### Solution:
+
 1. sort people by following h descending and k ascending. For example:
    [[7, 0], [7, 1], [6, 1], [5, 0], [5, 2], [4, 4]].
 2. set result as vector and size is same as people. Let all element in
@@ -107,11 +118,14 @@ choosing a different day in the future to sell the stock.
 Return the maximum profit you can achieve from this transaction. If you cannot
 achieve any profit, return 0.
 
-Ex1: prices = [7, 1, 5, 3, 6, 4], Output = 5.
-Ex2: prices = [7, 6, 4, 3, 1], Output = 0.
-Ex3: prices = [2, 4, 1], Output = 2.
+### Ex:
 
-Solution:
+1. prices = [7, 1, 5, 3, 6, 4], Output = 5.
+2. prices = [7, 6, 4, 3, 1], Output = 0.
+3. prices = [2, 4, 1], Output = 2.
+
+### Solution:
+
 1. Set max = 0, min = prices[0]
 2. To do forloop of size of prices.
 3. If min > prices[i], let min = prices[i].
@@ -127,11 +141,14 @@ as you like. (i.e, buy one and sell one share of the stock multiple times).
 Note: You may not engage in multiple transactions simultaneously (i.e, you
 must sell the stock before you buy again).
 
-Ex1: prices = [7, 1, 5, 3, 6, 4]. Output = 7 = (5 - 1) + (6 - 3)
-Ex2: prices = [1, 2, 3, 4, 5]. Output = 4 = 5 - 1.
-Ex3: prices = [7, 6, 4, 3, 1]. Output = 0
+### Ex:
 
-Solution:
+1. prices = [7, 1, 5, 3, 6, 4]. Output = 7 = (5 - 1) + (6 - 3)
+2. prices = [1, 2, 3, 4, 5]. Output = 4 = 5 - 1.
+3. prices = [7, 6, 4, 3, 1]. Output = 0
+
+### Solution:
+
 1. This problem is different from leetcode 121 due to lots of transactions.
 2. Therefore, Need to set pointer is last element and max = 0.
 3. To do foorloop of prices of size, if (i-1) element is smaller than i element,
@@ -146,10 +163,13 @@ Given an integer array flowerbed containing 0's and 1's, where 0 means empty
 and 1 means not empty, and an integer n, return if n new flowers can be
 planted in the flowerbed without violating the no-adjacent-flowers rule.
 
-Ex1: flowerbed = [1, 0, 0, 0, 1], n = 1, Output: True.
-Ex2: flowerbed = [1, 0, 0, 0, 1], n = 2, Output: False.
+### Ex:
 
-Solution:
+1. flowerbed = [1, 0, 0, 0, 1], n = 1, Output: True.
+2. flowerbed = [1, 0, 0, 0, 1], n = 2, Output: False.
+
+### Solution:
+
 1. To check flowerbed size is whether equal to one. If equal to one, make a
    conditions.
 2. To check first element and last one element can be insert to a flower.
@@ -159,7 +179,7 @@ Solution:
    a flower to intervals.
 5. If element in the intervals can be inserted, let element[i] = 1 and
    n minus one.
-6. Finally, if n <= 0, return true. if not, return false.
+6. Finally, if n is small or equal to 0, return true. if not, return false.
 
 ## 392. Is Subsequence
 
@@ -170,10 +190,13 @@ string by seleting some (can be none) of characters without disturbing the
 relative positions of the remaining characters. (i.e., "ace" is a subsequence
 of "abcde" while "aec" is not)
 
-Ex1. Input: s = "abc", t = "ahbgdc", Output: true.
-Ex2. Input: s = "axc", t = "ahbgdc", Output: false.
+### Ex:
 
-Solution:
+1. Input: s = "abc", t = "ahbgdc", Output: true.
+2. Input: s = "axc", t = "ahbgdc", Output: false.
+
+### Solution:
+
 1. Set conditions, if s.size() == 0, return true. Due to no element in s array.
 2. Set s_pointer = 0 and t_pointer = 0. To do while loop with the conditions
    t.size() > t_pointer and t_pointer++ in each loop.
@@ -189,10 +212,13 @@ non-decreasing by modifying ar most one element.
 We define an array is non-decreasing if nums[i + 1] >= nums[i] holds for every
 i (0-based) such that (n - 2 >= i >= 0).
 
-Ex1: Input: nums = [4, 2, 3], Output: true.
-Ex2: Input: nums = [4, 2, 1], Output: false.
+### Ex:
 
-Solution:
+1: Input: nums = [4, 2, 3], Output: true.
+2: Input: nums = [4, 2, 1], Output: false.
+
+### Solution:
+
 1. Set condition: if nums.size() is smaller than 3, return true.
 2. Set error_count = 0, pointer = 1.
 3. To do while loop with the condition pointer is smaller than nums.size()
@@ -210,15 +236,17 @@ Solution:
 Given an integer array nums, find the contiguous subarray (containing at least
 one number) which has the largest sum and return its sum.
 
-Ex1: Input: nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4], Output: 6.
-Ex2: Input: nums = [1], Output: 1.
-Ex3: Input: nums = [5, 4, -1, 7, 8], Output: 23.
+### Ex:
 
-Solution:
+1. Input: nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4], Output: 6.
+2. Input: nums = [1], Output: 1.
+3. Input: nums = [5, 4, -1, 7, 8], Output: 23.
+
+### Solution:
 1. Set int max = nums[0], int interval_max =0, int pointer = 0.
 2. To do while loop with the condition, pointer is smaller than nums.size().
-3. let interval_max plus nums[i], if interval_max is smaller than nums[i],
-   let interval_max = nums[i] for each loop.
+3. let interval_max plus nums[i], if intervalmax is smaller than nums[i].
+   let intervalmax = nums[i] for each loop.
 4. If interval_max is larger than max, let max = intervals_max.
 5. After while loop, return max.
 
@@ -228,9 +256,11 @@ A string S of lowercase English letters is given. We want to partition this
 string into as many parts as possible so that each letter appears in at most
 one part, and return a list of integers representing the size of these parts.
 
-Ex1: Input: S = "ababcbacadefegdehijhklij" Output: [9, 7, 8]
+### Ex:
 
-Solution:
+1. Input: S = "ababcbacadefegdehijhklij" Output: [9, 7, 8]
+
+### Solution:
 1. First, we need to know all number of the alphabet char to int. And do 
    forloop to get last one index of alphabets in S string. Every lastone
    index is inserted to vector<int> alphabet.
