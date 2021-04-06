@@ -101,3 +101,23 @@ and return its head.
 4. If find the pointer1 is NULL, let pointer0 of next is pointer0 of next of 
    next.
 5. Return head.
+
+## 24. Swap Nodes in Pairs
+
+Given a linked list, swap every two adjacent nodes and return its head.
+
+### Ex:
+
+1. Input: head = [1, 2, 3, 4]. Output: [2, 1, 4, 3].
+2. Input: head = []. Output: [].
+3. Input: head = [1]. Output: [].
+
+### Solution:
+
+1. Set the condition, if head is NULL or pointer of the next is NULL, return
+   head.
+2. Set ListNode n1 is head, n3 is pointer of next of next.
+3. To swap n1 and n2, like this 1 -> 2 to 2 -> 1.
+4. Next 1 to connect the recursive function, like this 2 -> 1, head->next->next
+   is equal to swapPairs(n3).
+5. Finally, return head.
