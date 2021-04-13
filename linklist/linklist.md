@@ -151,3 +151,42 @@ lists is not allowed.
 4. Next, create pointer of ListNode(sum).
 5. Connect ListNode(-1) by head insertion.
 6. Finally, return answer.next after whileloop.
+
+## 234. Palindrome Linked List
+
+Given the head of a singly linked list, true if it is a palindrome.
+
+### Ex:
+
+1. Input: head = [1, 2, 2, 1]. Output: true.
+2. Input: head = [1, 2]. Outout: false.
+
+### Solutions:
+
+1. Get the length of LinkList.
+2. Cut the LinkList to two part which the length is same as each other.
+3. Next, reverse second part.
+4. Each element of first part is compared to element of second part.
+5. If all element of first part is same as all element of second part, return
+   true, else return false.
+
+## 725. Split Linked List in Parts
+
+Given a (singly) linked list with head node root, write a function to split
+the linked list into k consecutive linked list "parts".
+
+The lenght of each part should be as equal as possible: no two parts should
+have a size differing by more than 1. This may lead to some parts being null.
+
+The parts should be in order of occurrence in the input list, and parts
+occurring earlier should always have a size greater than or equal parts
+occurring later.
+
+Return a list of ListNode's representing tje linked list part that are formed.
+
+## Ex:
+
+1. root = [1, 2, 3, 4], k = 5, Output = [[1], [2], [3], [4], null].
+2. root = [1, 2, 3], k = 5, Output = [[1], [2], [3], null, null].
+3. root = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], k = 3,
+   Output = [[1, 2, 3, 4], [5, 6, 7], [8, 9, 10]].
