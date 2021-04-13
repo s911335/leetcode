@@ -184,9 +184,21 @@ occurring later.
 
 Return a list of ListNode's representing tje linked list part that are formed.
 
-## Ex:
+### Ex:
 
 1. root = [1, 2, 3, 4], k = 5, Output = [[1], [2], [3], [4], null].
 2. root = [1, 2, 3], k = 5, Output = [[1], [2], [3], null, null].
 3. root = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], k = 3,
    Output = [[1, 2, 3, 4], [5, 6, 7], [8, 9, 10]].
+
+### Solution:
+
+1. Get the lenght of the root, count.
+2. Create vector<ListNode*> answer[k].
+3. Get num = count / k, remainder = count % k.
+3. To do forloop of answer.size(), if pointer is NULL, answer[i] is NULL.
+4. Else, if remainder is lager than zero, let carry is num + 1, else carry is
+   num. And answer[i] is the pointer which points bewteen now pointer to
+   carry-1 steps pointers.
+5. Record the pointer->next for answer[i+1].
+
