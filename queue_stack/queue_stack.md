@@ -77,3 +77,40 @@ myStack.empty(); // return False
 4. For pop, queue.pop() and return queue.front().
 5. For top, return queue.front.
 6. For empty, return queue.empty().
+
+## 155. Min Stack
+
+Design a stack that supports push, pop, top, and retrieving the minimum element
+in constant time.
+
+Implement the MinStack class:
+- MinStack(): initializes the stack object.
+- void push(val): pushes the element val onto the stack.
+- void pop(): removes the element on the top of the stack.
+- int top(): gets the top elements of the stack.
+- int getMin(): retrieves the minimum element in the stack.
+
+### Ex:
+
+Input: ["MinStack", "push", "push", "push", "getMin", "pop", "top", getMin"]
+       [[], [-2], [0], [-3], [], [], [], []].
+Output: [null, null, null, null, -3, null, 0, -2].
+
+Explanation:
+Minstack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin(); // return -3;
+minStack.pop();
+minStack.top(); //return 0;
+minStack.getMin(); //return 2;
+
+## Solution:
+
+1. Create 2 stack for normal stack and minstack.
+2. For push operator, let val push into normal stack. Next, let min is first
+   element in normal stack. If min is larger than pushing element. let min is 
+   equal to pushing element. Finally, push min into min stack.
+3. For pop operator, pop element for normal stack and min stack.
+4. For get min, return min stack.top().
