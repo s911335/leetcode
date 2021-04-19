@@ -106,7 +106,7 @@ minStack.pop();
 minStack.top(); //return 0;
 minStack.getMin(); //return 2;
 
-## Solution:
+### Solution:
 
 1. Create 2 stack for normal stack and minstack.
 2. For push operator, let val push into normal stack. Next, let min is first
@@ -114,3 +114,28 @@ minStack.getMin(); //return 2;
    equal to pushing element. Finally, push min into min stack.
 3. For pop operator, pop element for normal stack and min stack.
 4. For get min, return min stack.top().
+
+## 20. Valid Parentheses
+
+Given a string s containing just the characters '(', ')', '{', '}', '[' and 
+']', determine if the input string is valid.
+
+An input string is valid if:
+1. Open brackets must be closed by the same type of brackets.
+2. Open brackets must be closed in the correct order.
+
+### Ex:
+
+1. Input: s = '()', Output: true.
+2. Input: s = '()[]{}', Output: true.
+3. Input: s = '(]', Output: false.
+4. Input: s = '([)]', Output: false.
+5. Input: s = '{[]}', Output: false.
+
+### Solutions:
+
+1. Create a stack for pushing '(', '{', '['.
+2. whileloop with s, if s[i] is equal to '(' or '{' or '[' then push s[i] into 
+   the stack. if s[i] is equal to ')' or '}' or ']' then check the stack.top is
+   valid with s[i]. If it is not valid, return false.
+3. Finally, if the stack is empty, return true, else, return false.
