@@ -139,3 +139,32 @@ An input string is valid if:
    the stack. if s[i] is equal to ')' or '}' or ']' then check the stack.top is
    valid with s[i]. If it is not valid, return false.
 3. Finally, if the stack is empty, return true, else, return false.
+
+## 739. Daily Temperatures
+
+Given a list of daily temperatures T, return a list such that, for each day in
+the input, tells you how many days you would have to wait until a warmer
+temperature. If there is no future day for which this is possible, put 0
+instead.
+
+For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76,
+74], your output should be [1, 1, 4, 2, 1, 1, 0, 0].
+
+Note: The length of temperatures will be in the range [1, 30000]. Each
+temperature will be an integer in the range [30, 100].
+
+### Ex:
+
+1. Input: [73, 74, 75, 71, 69, 72, 76, 74]
+   Output: [1, 1, 4, 2, 1, 1, 0, 0]
+
+### Solution:
+
+1. Create the stack for pushing temperary index of T and result vector which
+   size is same as T.
+2. To do forloop from 0 to T.size()-1, put index i to the stack in each loop.
+3. If the stack is not empty and do whileloop, check that T[i] is larger than
+   T[st.top()] is true or not. If it is true, result[st.top] = i - st.top() 
+   and remove element of top of the stack. Next, to check next top of the stack.
+4. If check that T[i] is larger than T[st.top()] is false, break the whileloop.
+5. Finally, return result vector.
