@@ -168,3 +168,30 @@ temperature will be an integer in the range [30, 100].
    and remove element of top of the stack. Next, to check next top of the stack.
 4. If check that T[i] is larger than T[st.top()] is false, break the whileloop.
 5. Finally, return result vector.
+
+## 503. Next Greater Element II
+
+Given a circular integer array nums (i.e, the next element of
+nums[nums.length - 1] is nums[0], return the next greater number for every
+element in nums.
+
+The next greater number of a number x is the first greater number to its
+traversing-order next in the array, which means you could search circularly
+to find its next greater number. If it doesn't exist, return -1 for this
+number.
+
+### Ex:
+
+1. Input: nums = [1, 2, 1]. Output: nums = [2, -1, 2].
+2. Input: nums = [1, 2, 3, 4, 3]. Output: nums = [2, 3, 4, -1, 4].
+
+### Solution:
+
+1. Create the stack for putting index of vector of the nums and create
+   result vector which length is same as nums.
+2. To do forloop with 2 * n, put index of the vector each loop when i is
+   smaller than n.
+3. Next, if the stack is not empty and nums[i] is lager than nums[top of the 
+   stack], let result[top] = nums[i].
+4. If not, pass.
+5. Finally, return result vector.
