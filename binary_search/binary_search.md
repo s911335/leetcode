@@ -46,3 +46,22 @@ letters = ['a', 'b'], the answer is 'a'.
    letter[0], return letter[0].
 3. Do whileloop to find the smallest element in the list by using
    binary search.
+
+## 540. Single Element in a Sorted Array
+
+You are given a sorted array consisting of only integers where every element
+appears exactly twice, except for one element which appears exactly once. Find
+this single element that appears only once.
+
+**Follow up**: Your solution should run in O(logn) time and O(1) space.
+
+### Ex:
+
+1. Input: nums = [1, 1, 2, 3, 3, 4, 4, 8, 8]. Output: 2.
+2. Input: nums = [3, 3, 7, 7, 10, 11, 11]. Output: 10.
+
+### Solution:
+
+1. Use binary search to find non-repeat integers.
+2. In binary search, it must be considered that medium is even or odd.
+
